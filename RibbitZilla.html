@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>$RIBBITZILLA - Meme Godzilla</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0d0d0d;
+      color: #adff2f;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    header {
+      background: linear-gradient(90deg, #1f1f1f, #00ff99);
+      padding: 40px 20px;
+    }
+    header h1 {
+      font-size: 3rem;
+      color: #adff2f;
+    }
+    .btn {
+      background-color: #00ff99;
+      color: black;
+      padding: 12px 28px;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    section {
+      padding: 60px 20px;
+    }
+    h2 {
+      color: #39ff14;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .mascot {
+      max-width: 300px;
+      border-radius: 16px;
+      margin-top: 20px;
+      box-shadow: 0 0 30px #00ff99;
+    }
+    .tokenomics, .mememap {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    li {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+    .address-box, .presale-data {
+      background-color: #1a1a1a;
+      border: 1px solid #00ff99;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 500px;
+      margin: 20px auto;
+      color: #00ff99;
+    }
+    .address-box input {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      margin-top: 10px;
+      background-color: #000;
+      color: #00ff99;
+      border: 1px solid #00ff99;
+      border-radius: 6px;
+    }
+    .countdown {
+      font-size: 1.5rem;
+      margin: 20px 0;
+    }
+    footer {
+      background: #111;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+    .links a {
+      color: #00ff99;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>$RIBBITZILLA</h1>
+    <p>The Mutant Frog Godzilla of Memecoins 🐸💥</p>
+    <button class="btn">Buy on Raydium</button>
+  </header>
+
+  <section>
+    <h2>The Legend</h2>
+    <p>Born in the swamp. Forged by rugpulls. Powered by chaos. $RIBBITZILLA is here to flatten scams and stomp the memeverse.</p>
+    <img src="$RIBBITZILLA.png" alt="Ribbitzilla Mascot" class="mascot" />
+  </section>
+
+  <section class="address-box">
+    <h2>Wallet Address</h2>
+    <input type="text" value="💥💥💥💥💥💥💥💥💥💥SOON💥💥💥💥💥💥💥💥💥💥💥" id="walletAddress" readonly />
+    <button class="btn" onclick="copyAddress()">Copy Address</button>
+    <div class="countdown" id="countdown"></div>
+    <div class="presale-data">
+      <p>Total SOL Raised: <span id="totalRaised">Loading...</span></p>
+      <p>Unique Contributors: <span id="contributorCount">Loading...</span></p>
+    </div>
+  </section>
+
+  <section class="tokenomics">
+    <h2>Tokenomics</h2>
+    <ul>
+      <li>💥 Total Supply: SOON</li>
+      <li>👥 100% Community-Owned</li>
+      <li>🛑 No Taxes</li>
+      <li>🔒 Liquidity Locked</li>
+    </ul>
+  </section>
+
+  <section class="mememap">
+    <h2>Mememap</h2>
+    <ul>
+      <li>✅ Stealth Launch + Community Formation</li>
+      <li>🚀 DEX listings + Viral Memes on Twitter</li>
+      <li>🎨 NFT Mutants Collection + Meme Tools</li>
+      <li>🌍 RibbitCon 2025 + CEX listings</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Join the Swamp</h2>
+    <div class="links">
+      <a href="https://x.com/RibbitZilla">Twitter</a>
+      <a href="#">Telegram</a>
+      <a href="#">NFTs (Coming Soon)</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>This is a meme project with no intrinsic value. For degen entertainment only. Ribbit wisely 🐸.</p>
+  </footer>
+
+  <script>
+    function copyAddress() {
+      const copyText = document.getElementById("walletAddress");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("Wallet address copied!");
+    }
+
+    const countdown = document.getElementById("countdown");
+    const endTime = new Date("2025-05-05T00:00:00Z").getTime();
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = endTime - now;
+      if (distance <= 0) {
+        countdown.innerHTML = "Presale has ended.";
+        return;
+      }
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      countdown.innerHTML = `⏳ Presale ends in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+
+    // Placeholder logic for raised/contributors (to be replaced with live logic)
+    document.getElementById("totalRaised").textContent = "12.34 SOL";
+    document.getElementById("contributorCount").textContent = "157";
+  </script>
+</body>
+</html>
